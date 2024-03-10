@@ -4,7 +4,10 @@ input deve essere uguale ai char in posizione pari della stringa flag
 software 06 - strings 3
 il programma fa il bitwise XOR tra input e stringa key
 
-SS_0.01 - acrostic
+SS_0.01 - The safe
+tramite ghidra analizzando il main, è salvata la password in chiaro, la cui una volta inserita nel programma ci da accesso alla flag
+
+SS_0.02 - acrostic
 disassembla la funzione a_great_game e leggi le prime lettere delle istruzioni
 
 SS_0.03 - dissection
@@ -12,6 +15,11 @@ su ghidra tramite la finestra bytes cerca per stringhe, è presente la flag fram
 C C I . T { I _ . _ d 3 . a d _ . t i . 0 n . 5}
 
 SS_0.04 - volatility
+
+--------------------------------
+
+SS_1.01 - NextGen Safe
+in ghidra, andare nel main dove c'è il confronto se la stringa inserita è uguale a you_cAnT_gue55_th1z_s3cur3_p@ssword, quindi patchare l'istruzione CALL puts (ovvero puts("Nice try ;)") all'interno dell'if) con JMP print_safe_contents
 
 SS_1.02 - Slow Printer
 trovare la funzione che raddoppia il tempo, vedere dove viene chiamata tramite CALL (assembly) e patchare la call con un JMP alla prossima istruzione, cosi da non far incrementare il tempo
