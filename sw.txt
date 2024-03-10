@@ -1,0 +1,20 @@
+software 05 - strings 2
+input deve essere uguale ai char in posizione pari della stringa flag
+
+software 06 - strings 3
+il programma fa il bitwise XOR tra input e stringa key
+
+SS_0.01 - acrostic
+disassembla la funzione a_great_game e leggi le prime lettere delle istruzioni
+
+SS_0.03 - dissection
+su ghidra tramite la finestra bytes cerca per stringhe, è presente la flag frammentata
+C C I . T { I _ . _ d 3 . a d _ . t i . 0 n . 5}
+
+SS_0.04 - volatility
+
+SS_1.02 - Slow Printer
+trovare la funzione che raddoppia il tempo, vedere dove viene chiamata tramite CALL (assembly) e patchare la call con un JMP alla prossima istruzione, cosi da non far incrementare il tempo
+
+SS_1.03 - Flag Checker
+analizzando in ghidra si nota che il programma controlla se la flag inserita sia corretta tramite un algoritmo ricorsivo, che controlla che ogni carattere sia uguale al valore ascii contenuto in un array di interi. ho implementato un programma in c che legge tali valori ascii da file e calcola la flag
