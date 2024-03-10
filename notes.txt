@@ -1,0 +1,12 @@
+xdd - hexdump di un file
+gcc -S -> compila in elf
+gcc -E -> preprocessore
+strings <executable_file> -> fa vedere tutte le stringhe presenti in un file
+pwndbg -> gdb ma meglio
+pwntools -> libreria python
+
+---- pwndbg ----
+disass -> mostra il codice assembly
+pie -> visualizza l'offset del programma
+breakr <address> -> aggiungi breakpoint sommando offset (pie) ad address
+
