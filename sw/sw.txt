@@ -13,6 +13,7 @@ disassembla la funzione a_great_game e leggi le prime lettere delle istruzioni
 SS_0.03 - dissection
 su ghidra tramite la finestra bytes cerca per stringhe, è presente la flag frammentata
 C C I . T { I _ . _ d 3 . a d _ . t i . 0 n . 5}
+C C I . T { I _ . _ d 3 . a d _ . t i . 0 n . 5}
 
 SS_0.04 - volatility
 
@@ -36,6 +37,10 @@ ror:
 
 reverse_ror:
 ((en_c >> 7) & IU) | ((en_c & 0x7fU) << 1)
+
+SS_1.05 - morph
+il programma mappa il file con fd=-1 all'interno del suo spazio di indirizzi, a indirizzo 0x00000000 (regione grande 4096 bytes) con permessi di lettura, scrittura ed esecuzione
+
 
 
 
