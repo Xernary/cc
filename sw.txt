@@ -26,3 +26,14 @@ trovare la funzione che raddoppia il tempo, vedere dove viene chiamata tramite C
 
 SS_1.03 - Flag Checker
 analizzando in ghidra si nota che il programma controlla se la flag inserita sia corretta tramite un algoritmo ricorsivo, che controlla che ogni carattere sia uguale al valore ascii contenuto in un array di interi. ho implementato un programma in c che legge tali valori ascii da file e calcola la flag
+
+SS_1.04 - Unbreakable AES
+
+ror:
+((c & 00000001) << 7) | ((c >> 1) & 01111111)
+
+reverse_ror:
+(en_c >> 7) | (en_c << 1)
+
+
+
