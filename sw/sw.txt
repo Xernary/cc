@@ -28,12 +28,14 @@ SS_1.03 - Flag Checker
 analizzando in ghidra si nota che il programma controlla se la flag inserita sia corretta tramite un algoritmo ricorsivo, che controlla che ogni carattere sia uguale al valore ascii contenuto in un array di interi. ho implementato un programma in c che legge tali valori ascii da file e calcola la flag
 
 SS_1.04 - Unbreakable AES
+analizzando in ghidra, l'encryption si basa sulla funzione ror, che viene applicata ad ogni carattere un numer i di volte, dove i è l'indice del carattere. Inoltre la key che dobbiamo inserire per cryptare è inutile perchè non viene utilizzata dal programma.
+Per risolverla ho copiato il codice in c e ho programmato la funzione reverse_ror che applica le stesse operazioni di ror ma in ordine inverso, quindi decripta 
 
 ror:
 ((c & 00000001) << 7) | ((c >> 1) & 01111111)
 
 reverse_ror:
-(en_c >> 7) | (en_c << 1)
+((en_c >> 7) & IU) | ((en_c & 0x7fU) << 1)
 
 
 
