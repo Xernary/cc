@@ -1,14 +1,18 @@
 software 05 - strings 2
 input deve essere uguale ai char in posizione pari della stringa flag
+---------------------------------------------------
 
 software 06 - strings 3
 il programma fa il bitwise XOR tra input e stringa key
+---------------------------------------------------
 
 SS_0.01 - The safe
 tramite ghidra analizzando il main, è salvata la password in chiaro, la cui una volta inserita nel programma ci da accesso alla flag
+---------------------------------------------------
 
 SS_0.02 - acrostic
 disassembla la funzione a_great_game e leggi le prime lettere delle istruzioni
+---------------------------------------------------
 
 SS_0.03 - dissection
 su ghidra tramite la finestra bytes cerca per stringhe, è presente la flag frammentata
@@ -16,17 +20,20 @@ C C I . T { I _ . _ d 3 . a d _ . t i . 0 n . 5}
 C C I . T { I _ . _ d 3 . a d _ . t i . 0 n . 5}
 
 SS_0.04 - volatility
-
+-
 --------------------------------
 
 SS_1.01 - NextGen Safe
 in ghidra, andare nel main dove c'è il confronto se la stringa inserita è uguale a you_cAnT_gue55_th1z_s3cur3_p@ssword, quindi patchare l'istruzione CALL puts (ovvero puts("Nice try ;)") all'interno dell'if) con JMP print_safe_contents
+----------------------------------------------------
 
 SS_1.02 - Slow Printer
 trovare la funzione che raddoppia il tempo, vedere dove viene chiamata tramite CALL (assembly) e patchare la call con un JMP alla prossima istruzione, cosi da non far incrementare il tempo
+----------------------------------------------------------------
 
 SS_1.03 - Flag Checker
 analizzando in ghidra si nota che il programma controlla se la flag inserita sia corretta tramite un algoritmo ricorsivo, che controlla che ogni carattere sia uguale al valore ascii contenuto in un array di interi. ho implementato un programma in c che legge tali valori ascii da file e calcola la flag
+------------------------------------------------------------------
 
 SS_1.04 - Unbreakable AES
 analizzando in ghidra, l'encryption si basa sulla funzione ror, che viene applicata ad ogni carattere un numer i di volte, dove i è l'indice del carattere. Inoltre la key che dobbiamo inserire per cryptare è inutile perchè non viene utilizzata dal programma.
@@ -37,10 +44,16 @@ ror:
 
 reverse_ror:
 ((en_c >> 7) & IU) | ((en_c & 0x7fU) << 1)
+-------------------------------------------------------------
 
 SS_1.05 - morph
-il programma mappa il file con fd=-1 all'interno del suo spazio di indirizzi, a indirizzo 0x00000000 (regione grande 4096 bytes) con permessi di lettura, scrittura ed esecuzione
+il programma mappa una pagina di memoria all'interno del suo spazio di indirizzi, a un indirizzo random (regione grande 4096 bytes) con permessi di lettura, scrittura ed esecuzione:
 
+#define PROT_READ        0x1               /* Page can be read.  */
+#define PROT_WRITE       0x2               /* Page can be written.  */
+#define PROT_EXEC        0x4               /* Page can be executed.  */
 
-
+flags = 100010
+#define MAP_PRIVATE      0x02                /* Changes are private.  */
+#define MAP_ANONYMOUS    0x20                /* Don't use a file.  */
 
