@@ -20,7 +20,7 @@ C C I . T { I _ . _ d 3 . a d _ . t i . 0 n . 5}
 C C I . T { I _ . _ d 3 . a d _ . t i . 0 n . 5}
 
 SS_0.04 - volatility
--
+tramite pwndgb, metter un break nel main e avanzare istruzione per istruzione con ni finchè non viene chiamata la funzione decode_flag, dopo di che esaminare la stringa all'indirizzo di memoria della flag che ci viene dato tramite x/s <address>
 --------------------------------
 
 SS_1.01 - NextGen Safe
