@@ -1,0 +1,3 @@
+site ip address: 1.1.122.222
+
+filtrare solo pacchetti http, il secondo pacchetto contiene la risposta http del server contenete il sito web, dentro il corpo http c'è una parte commeentata che dice che il file api.js contiene informazioni sensibili. basta andare su file > Export Objects > HTTP ed estrare il filee api.js, dove si trova la variabile api_password che una volta convertita da decimale a stringa ci da la flag
