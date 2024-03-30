@@ -1,0 +1,3 @@
+pacchetto 4196 contiene la flag nel campo User-Agent nel body della richiesta HEAD
+
+gli attaccanti attaccano il server facendo richieste del tipo get /~admin2 che significa accedere alla home directory di admin

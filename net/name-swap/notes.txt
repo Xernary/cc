@@ -1,0 +1,7 @@
+gli attaccanti injectano un comando 
+
+dopo si connettono alla rev shell precedentementee creata con netcat alla porta 443 e eseguono il comando "chmod a+r file1" (pacchetto 5746)
+
+adesso hanno i permessi per accedere a tale file, e vi accedono di nuovo con una GET (pacchetto 5757)
+
+il server risponde mandando il contenuto di tale file (contenente la flag) all'attaccante (pacchetto 5775)
