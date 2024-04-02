@@ -33,6 +33,16 @@ config HOST:
 ip route add 172.16.44.200/32 via 192.168.123.123 
 
 
+SOLUTION Docker networks
+
+sudo docker build .
+sudo docker build -t frontend .
+sudo docker run -h backend --name backend -d backend
+sudo docker run -p 1234:80 -d frontend
+
+echo "172.17.0.3 backend" >> /etc/hosts  (in frontend)
+per associare l'indirizzo all'hostname backend in frontend, in modo da rendere backend raggiungibile da frontend
+
 
 
 
