@@ -4,10 +4,29 @@
 <script>
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
-ctx.fillStyle = "red";
-ctx.lineWidth = 12;
+ctx.fillStyle = "red"; // lines color
+ctx.lineWidth = 12; // lines width
 ctx.beginPath();
-ctx.moveTo(100, 200); // (x,y) iniziali
-ctx.lineTo(500, 200); // (x,y) finali
+
+const coords = [];
+document.getElementById('lines.txt').onchange = function() {
+  var file = this.files[0];
+
+  var reader = new FileReader();
+  reader.onload = function(progressEvent) {
+    // Entire file
+    const text = this.result;
+
+    // By lines
+    var lines = text.split('\n');
+    for (var line = 0; line < lines.length; line++) {
+      console.log(lines[line]);
+    }
+  };
+  reader.readAsText(file);
+};
+ctx.moveTo(coords[0], coords[1]); // (x,y) iniziali
+ctx.lineTo(coords[2], coords[3]); // (x,y) finali
+
 ctx.stroke();
 </script>
