@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CCIT Site</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <style>
+        body { padding-top:50px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>CCIT secret vault: access granted!</h1>
+        </div>
+    </div>
+
+    <img src="data.jpg" alt="CC">
+    <img src="not_the_flag.jpg" alt="Not the flag">
+
+
+</body>
+</html>

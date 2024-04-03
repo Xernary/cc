@@ -1,0 +1,13 @@
+<canvas id="myCanvas" width="512" height="512" style="border:1px solid black;">
+</canvas>
+
+<script>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+ctx.fillStyle = "red";
+ctx.lineWidth = 12;
+ctx.beginPath();
+ctx.moveTo(100, 200); // (x,y) iniziali
+ctx.lineTo(500, 200); // (x,y) finali
+ctx.stroke();
+</script>

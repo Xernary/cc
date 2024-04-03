@@ -1,0 +1,3 @@
+https://github-wiki-see.page/m/scribble-rs/skribbl.io-docs/wiki/Draw-%28server%29
+
+site above contains documentation for drawCommands event
