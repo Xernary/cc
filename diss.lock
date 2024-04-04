@@ -1,9 +1,9 @@
 #Ghidra Lock File
-#Fri Mar 15 14:28:34 CET 2024
+#Fri Mar 22 14:43:38 CET 2024
 <META>\ Supports\ File\ Channel\ Locking=Channel Lock
 Hostname=arch
 OS\ Architecture=amd64
 OS\ Name=Linux
 OS\ Version=6.4.2-arch1-1
-Timestamp=3/15/24, 2\:28\u202FPM
+Timestamp=3/22/24, 2\:43\u202FPM
 Username=nick
