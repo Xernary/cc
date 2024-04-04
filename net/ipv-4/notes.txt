@@ -1,0 +1,1 @@
+la flag è sparpagliata nei pacchetti DNS di risposta alle query di indirizzi negativi. Basta ordinare i pezzi di flag dall'inirizzo piu piccolo a quello piu grande

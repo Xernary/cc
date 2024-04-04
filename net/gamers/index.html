@@ -1,0 +1,32 @@
+<canvas id="myCanvas" width="512" height="512" style="border:1px solid black;">
+</canvas>
+
+<script>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+ctx.fillStyle = "red"; // lines color
+ctx.lineWidth = 12; // lines width
+ctx.beginPath();
+
+const coords = [];
+document.getElementById('lines.txt').onchange = function() {
+  var file = this.files[0];
+
+  var reader = new FileReader();
+  reader.onload = function(progressEvent) {
+    // Entire file
+    const text = this.result;
+
+    // By lines
+    var lines = text.split('\n');
+    for (var line = 0; line < lines.length; line++) {
+      console.log(lines[line]);
+    }
+  };
+  reader.readAsText(file);
+};
+ctx.moveTo(coords[0], coords[1]); // (x,y) iniziali
+ctx.lineTo(coords[2], coords[3]); // (x,y) finali
+
+ctx.stroke();
+</script>

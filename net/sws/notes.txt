@@ -1,0 +1,1 @@
+c'è un webserver http attivo sulla porta 22, quindi filtrare i pacchetti tcp.port == 22 e fare decode as HTTP, poi exportare le due immagini jpg che ci sono, di cui una è la flag

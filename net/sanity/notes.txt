@@ -1,0 +1,1 @@
+aprire in wireshark, andare nel menu in alto Statistics > File Proprieties e leggere in basso il commento che contiene la flag

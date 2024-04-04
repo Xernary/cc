@@ -1,0 +1,48 @@
+sudo docker exec -it setup-node1-1 /bin/bash
+to execute a command inside a docker
+
+ss -a 
+list all sockets
+-------------------------------------------
+
+NAT
+PREROUTING (DNAT): quello che fanno i router per far ricevere i pacchetti di risposta da internet agli indirizzi locali, reindirizza i pacchetti verso un socket (ip:port) verso un altro socket (ip:port)
+
+POSTROUTING (MASQUERADE/SNAT): quello che fanno i router per far andare gli indirizzi locali su internet
+---------------------------------------------
+
+SOLUTION NAT1
+iptables -t nat -A POSTROUTING -o eth0 --source 10.0.0.0/24 -j MASQUERADE
+
+i pacchetti da node2 che arrivano a HOST vengono nattati con 10.0.0.2, ma HOST non conosce tale rete quindi è irragiungibile. tramite il comando su node1 i pacchetti proveniente dalla rete 10.0.0.0/24 vengono ulteriormente nattati con l'ip di node1 192.168.123.1 che HOST conosce
+
+SOLUTION NAT2
+iptables -t nat -A PREROUTING -p tcp -d 192.168.123.123 --dport 2222 -j DNAT --to-destination 10.0.0.2:22
+
+tale comando su node1 fa in modo di reindirizze i pacchetti destinati a 192.168.123.123:2222 verso 10.0.0.2:22 (prima di fare routing) minecraft22
+
+SOLUTION The final shot
+
+config node2:
+ip route add 192.168.123.1 via 10.0.0.1 
+
+config node3:
+ip route add 192.168.123.0/24 via 172.16.44.100 
+
+config HOST:
+ip route add 172.16.44.200/32 via 192.168.123.123 
+
+
+SOLUTION Docker networks
+
+sudo docker build .
+sudo docker build -t frontend .
+sudo docker run -h backend --name backend -d backend
+sudo docker run -p 1234:80 -d frontend
+
+echo "172.17.0.3 backend" >> /etc/hosts  (in frontend)
+per associare l'indirizzo all'hostname backend in frontend, in modo da rendere backend raggiungibile da frontend
+
+
+
+

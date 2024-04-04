@@ -1,0 +1,22 @@
+filtrare per protocollo http
+
+pacchetto 20, se si decoda il campo Reassembled TCP Data si ottiene il seguente file javascript:
+
+function r(s, i) {
+  return s.replace(/[a-zA-Z]/g, function (c) {
+	return String.fromCharCode((c <= 'Z' ? 90 : 122) >= (c = c.charCodeAt(0) + i) ? c : c - 26);
+ });
+}
+
+
+
+i = 12+p
+
+funzione inversa:
+function d(s, i) {
+  return s.replace(/[a-zA-Z]/g, function (c) {
+	return String.fromCharCode((c.charCodeAt(0) - i) < (c <= 'Z' ? 65 : 97) ? c.charCodeAt(0) + 26 - i : c.charCodeAt(0) - i); //c.charCodeAt(0)+26-i
+ });
+}
+
+la flag si trova dal pacchetto 70 in poi

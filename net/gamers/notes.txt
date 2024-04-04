@@ -1,0 +1,7 @@
+https://github-wiki-see.page/m/scribble-rs/skribbl.io-docs/wiki/Draw-%28server%29
+
+site above contains documentation for drawCommands event
+
+dopo aver messo le chiavi TLS su wireshark, ho guardato i pacchetti con protocollo "websocket" e ho fatto follow stream. 
+ho copiato il testo (commands) e ho fatto il programma convert.c che lo converte ogni comando "drawCommands" in una riga del tipo "x1 y1 x2 y2" che rappresenta un segmento disegnato.
+tramite "./convert > graphics/lines.txt" metto tali righe nel file lines.txt, dopo eseguo il programma main.c dentro graphic che prende il file contenente tutte le linee (lines.txt) e le disegna sullo schermo. il disegno ottenuto è la flag.

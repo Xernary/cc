@@ -1,0 +1,2 @@
+probabilmente è telnet, perchè c'è uno scambio di comandi e output remoto. 
+per ottenere la flag basta seguire i comandi che vengono eseguiti su vi una volta aperto il file flag.txt. ogni comando n| porta il cursore al carattere successivo della flag

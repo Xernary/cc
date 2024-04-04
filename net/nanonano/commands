@@ -1,0 +1,117 @@
+hostname
+springchickenz
+uname -a
+Linux springchickenz 4.15.0-39-generic #42~16.04.1-Ubuntu SMP Wed Oct 24 17:09:54 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+whoami
+root
+ls -la
+total 24
+drwxr-xr-x  2 root     root     4096 Dec  8 10:24 .
+drwxr-xr-x 61 enriquez enriquez 4096 Dec  7 07:26 ..
+-rw-r--r--  1 root     root      713 Dec  7 08:07 flag.txt
+-rw-r--r--  1 root     root       40 Dec  7 06:51 grondaia.php
+-rw-r--r--  1 root     root       19 Dec  7 06:51 MarinaRibaudo's_password.txt
+-rw-r--r--  1 root     root     1783 Dec  7 06:52 Three_Secrets_of_Fatima.txt
+cat flag.txt
+Stay with me as long as you love me
+
+You're the one I need to live
+
+Be my girl as long as you want me
+
+Your kiss is sweet, give me a lift
+
+ 
+
+Everything I know is that I want to live with you
+
+No matter, babe, what happened in the past
+
+Just take a look at me and I'm sure that you will see
+
+I don't want to give you up 'cause you're the best
+
+ 
+
+Our love, it shines, shines like the sun
+
+Sometimes more and sometimes less
+
+Love is strange in some of the changing (?)
+
+But I don't want to live without your caress
+
+You're everything to me and I want you to feel special
+
+I'll never find another one like you
+
+When you broke into my world, I knew that belonged together
+
+I'm sure you know it too: our love is true
+nano flag.txt
+.[?1049h.[1;44r.(B.[m.[4l.[?7h.[?1h.=.[?1h.=.[?1h.=.[39;49m.[?25l.[39;49m.(B.[m.[H.[2J.[42;98H.(B.[0;7m[ Reading File ]
+.[3d.(B.[m.[42;97H.(B.[0;7m[ Read 35 lines
+.[38d.(B.[m.[?12l.[?25h.[H.[39;49m.(B.[0;7m  GNU nano 2.5.3                                                          File: flag.txt                                                                                                                          .[3;1H.(B.[mStay with me as long as you love me
+.[5dYou're the one I need to live
+.[7dBe my girl as long as you want me
+.[9dYour kiss is sweet, give me a lift
+.[13dEverything I know is that I want to live with you
+.[15dNo matter, babe, what happened in the past
+.[17dJust take a look at me and I'm sure that you will see
+.[19dI don't want to give you up 'cause you're the best
+.[23dOur love, it shines, shines like the sun
+.[25dSometimes more and sometimes less
+.[27dLove is strange in some of the changing (?)
+.[29dBut I don't want to live without your caress
+.[31dYou're everything to me and I want you to feel special
+.[33dI'll never find another one like you
+.[35dWhen you broke into my world, I knew that belonged together
+.[37dI'm sure you know it too: our love is true
+.[43d.(B.[0;7m^G.(B.[m Get Help.[18G.(B.[0;7m^O.(B.[m Write Out     .(B.[0;7m^W.(B.[m Where Is.[52G.(B.[0;7m^K.(B.[m Cut Text.[69G.(B.[0;7m^J.(B.[m Justify.[86G.(B.[0;7m^C.(B.[m Cur Pos.[103G.(B.[0;7m^Y.(B.[m Prev Page     .(B.[0;7mM-\.(B.[m First Line   .(B.[0;7mM-W.(B.[m WhereIs Next .(B.[0;7m^^.(B.[m Mark Text     .(B.[0;7mM-}.(B.[m Indent Text  .(B.[0;7mM-U.(B.[m Undo
+.[44d.(B.[0;7m^X.(B.[m Exit.[44;18H.(B.[0;7m^R.(B.[m Read File     .(B.[0;7m^\.(B.[m Replace.[52G.(B.[0;7m^U.(B.[m Uncut Text    .(B.[0;7m^T.(B.[m To Spell.[86G.(B.[0;7m^_.(B.[m Go To Line    .(B.[0;7m^V.(B.[m Next Page     .(B.[0;7mM-/.(B.[m Last Line    .(B.[0;7mM-].(B.[m To Bracket   .(B.[0;7mM-^.(B.[m Copy Text    .(B.[0;7mM-{.(B.[m Unindent Text.(B.[0;7mM-E.(B.[m Redo
+.[3d.y
+.[42d.[J.[44;210H.[44;1H.[?1049l
+.[?1l.>vi -c ':%s/sweet/}/g' -c ':%s/babe/{/g' flag.txt
+.[?1049h.[?1h.=.[1;44r.[?12;25h.[?12l.[?25h.[27m.[23m.[m.[H.[2J.[?25l.[44;1H"flag.txt" 35 lines, 713 characters.[1;1HStay with me as long as you love me
+
+You're the one I need to live
+
+Be my girl as long as you want me
+
+Your kiss is }, give me a lift.[11;1HEverything I know is that I want to live with you
+
+No matter, {, what happened in the past
+
+Just take a look at me and I'm sure that you will see
+
+I don't want to give you up 'cause you're the best.[21;1HOur love, it shines, shines like the sun
+
+Sometimes more and sometimes less
+
+Love is strange in some of the changing (?)
+
+But I don't want to live without your caress
+
+You're everything to me and I want you to feel special
+
+I'll never find another one like you
+
+When you broke into my world, I knew that belonged together
+
+I'm sure you know it too: our love is true
+.[1m.[34m~                                                                                                                                                                                                                 .[37;1H~                                                                                                                                                                                                                 .[38;1H~                                                                                                                                                                                                                 .[39;1H~                                                                                                                                                                                                                 .[40;1H~                                                                                                                                                                                                                 .[41;1H~                                                                                                                                                                                                                 .[42;1H~                                                                                                                                                                                                                 .[43;1H~                                                                                                                                                                                                                 .[13;1H.[?12l.[?25h:17
+.[?25l.[m.[44;1H.[K.[44;1H:25
+.[25;1H.[?12l.[?25h30|:25.[25C.[?25l.[44;1H.[K.[44;1H:5
+.[5;1H.[?12l.[?25h32|17|10|:13
+.[9Cl as lon.[?25l.[44;1H.[K.[44;1H:13
+.[13;1H.[?12l.[?25h12|38|39|5|:27
+.[11C.[26Cs
+No m.[?25l.[44;1H.[K.[44;1H:27
+.[27;1H.[?12l.[?25h34|26|27|28|29|:35
+.[33C.[27;26Hwit.[?25l.[44;1H.[K.[44;1H:35
+.[35;1H.[?12l.[?25h33|36|3|:7
+.[32Cve 
+I'.[?25l.[44;1H.[K.[44;1H:7
+.[7;1H.[?12l.[?25h14|:q!
+.[13C.[?25l.[44;1H.[K.[44;1H:q!
+.[44;1H.[K.[44;1H.[?1l.>.[?12l.[?25h.[?1049l
