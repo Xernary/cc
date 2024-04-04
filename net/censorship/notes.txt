@@ -1,0 +1,4 @@
+analizzando i pacchetti HTTP, nel pacchetto 28 è presente una POST che uploada un file criptato tramite aes-256-cbc che è simmetrico, ma anche la chiave con cui è stato criptato. 
+con il comando: 
+openssl aes-256-cbc -d -a -in cipher_text.txt -out decrypted.txt.new
+decripto il file (inserendo la chiave quando viene richiesta la password) 
