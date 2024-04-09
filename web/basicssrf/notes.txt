@@ -1,0 +1,3 @@
+leggere il pdf su internet, cercare: orange curl tsai
+il codice php prima fa il parsing url con la libreria parse_url e poi con la libreria curl
+http://username@127.0.0.1@google.com/url.della.flag

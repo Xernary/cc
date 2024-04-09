@@ -1,0 +1,1 @@
+challenge.url/static../app.py

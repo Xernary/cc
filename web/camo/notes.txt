@@ -1,0 +1,3 @@
+cambiare l'header del file e mettere image/png cosi da far credere al sever che l'immagine caricata sia un'immagine, poi il server da l'echo dell'immagine 
+header("HTTP/1.1 303 Moved permanentely")
+header ("Location: http://0.0.0.0/get_flag.png")
