@@ -1,0 +1,2 @@
+osserviamo che quando premiamo su un link, viene caricata la pagina http://filtered.challs.cyberchallenge.it/post.php?id=2 dove il campo id cambia in base al link che clicchiamo. si puo quindi fare sql injection usando il valore del parametro id.
+mettendo nell'id la parola and oppure union, il server ci reindirizza e ci mostra una funzione che blacklista appunto and e union all'interno dell'url. quindi invece di usare and uso &&
