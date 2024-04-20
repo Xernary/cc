@@ -1,0 +1,1 @@
+its a buffer overflow on the main function return address. important thing is that compiler does optimization and does not allocate exactly 1024 bytes but rather 1040 (we can see from "disas main" in gdb the instruction +31 on main: lea    rax,[rbp-0x410] where passes the buff address to the fun by adding 1040 to rbp

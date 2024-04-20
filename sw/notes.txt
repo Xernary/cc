@@ -9,4 +9,4 @@ pwntools -> libreria python
 disass -> mostra il codice assembly
 pie -> visualizza l'offset del programma
 breakr <address> -> aggiungi breakpoint sommando offset (pie) ad address
-
+info address <symbol> -> ritorna l'indirizzo di memoria a cui si trova il symbol, che puo essere una funzione
