@@ -1,0 +1,43 @@
+packet 1375: ÅÂ{"description":{"text":"A Minecraft Server"},"players":{"max":20,"online":1,"sample":[{"id":"ed5ba33c-39c0-3939-a0b3-01d226a17f7c","name":"Winston"}]},"version":{"name":"1.16.5","protocol":754}}
+
+Protocol 754, version 1.16.5
+https://wiki.vg/index.php?title=Protocol&oldid=16681
+
+
+primo pacchetto client della serie di pacchetti uguali: 1063
+
+SERVER SPAWNS ENTITY (server -> client) ID=0x01
+
+fb01cb02789c6d8f4d4ac4401085c503788650eb6414339938c19520886b61162243a5534e3776ba87744d6208597a1ac18d0b71e319bc86b7b0222282ae8a7a7cbc9f8397fd01b841172c3241014a23cfb8dfd28ce99e2186ceb086e27a00e302356cbc13ead26b17ad8cba134059b9e72d3986620054df48d86d361478ad7c5da3ab046cd1eea68843266ba31f8b08c618b46fa9f9c744fb6e2da2e17e4af28ee50913325514a0368e5483b75c6c2df6d408652ad1914a5a285a262759364f5295e549992eb2a45c62591de5699acf8f857558d397dbb4f5f7ac7194527fd5182e4cd4190737e3ded39bfd78b83a5d3dd3ebe37bc8cf3e01d3b27050
+
+----------------------
+ID 0x01 -> server spawns entity
+ID 0x0a + (transaction id) -> command suggestion request
+ID 0x1a -> client is on ground or not
+ID 0x22 + (player id) -> player performed action (crouching, sprinting)
+ID 0x12 -> player used F3 + I while looking at entity
+ID 0x18 -> set plater position and rotation (player moving)
+ID 0x24 -> Pong packer
+
+2118 789cd3636060e0d9 ffff6b811ba3bddb e133f60d0c0cf63c 599f1800 6278081f
+
+PLAYER COORDS:
+(big endian)
+789cd3636060e0d9 ffff6b811ba3bddb e133f60d0c0cf63c
+x: 0111100010011100110100110110001101100000011000001110000011011001
+y: 1111111111111111011010111000000100011011101000111011110111011011
+z: 1110000100110011111101100000110100001100000011001111011000111100
+
+(little endian)
+D9E0606063D39C78 DBBDA31B816BFFFF 3CF60C0C0DF633E1
+x: -8.6606110128105298863938215851E124
+y: -8.41461714993120444488575925017E133
+z: 4.89543049156996401756152329816E-15
+
+
+x: 9.74622605892577773241384428849E272
+y: NaN
+z: -1.75397329542796192891401153353E160 
+
+
+
