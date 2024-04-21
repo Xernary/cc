@@ -5,7 +5,8 @@ https://wiki.vg/index.php?title=Protocol&oldid=16681
 
 primo pacchetto client della serie di pacchetti uguali: 1063
 pacchetto messaggio chat: 1146, contenuto: "find the message"
-pacchetto piazzamento blocco: 1223
+pacchetto piazzamento blocco (cartello): 1223
+invio messaggio scritto sul cartello: 1272
 pacchetto messaggio chat: 1334, contenuto: "get it bye"
 
 
@@ -26,5 +27,9 @@ compressed ID    decompressed ID    description
 0x18             0x2e               BLOCK PLACEMENT (serverbound)
 0x12             0x03               CHAT MESSAGE (serverbound)
 0x0c             0x03               CHAT MESSAGE (serverbound)
+0x24             0x2b               UPDATE SIGN (Done is pressed)
+
+PPVG{4aql_y1i3f} 1272
+use rot
 
 
