@@ -4,6 +4,10 @@ Protocol 754, version 1.16.5
 https://wiki.vg/index.php?title=Protocol&oldid=16681
 
 primo pacchetto client della serie di pacchetti uguali: 1063
+pacchetto messaggio chat: 1146, contenuto: "find the message"
+pacchetto piazzamento blocco: 1223
+pacchetto messaggio chat: 1334, contenuto: "get it bye"
+
 
 --------------------------------------------
 
@@ -11,5 +15,16 @@ i pacchetti sono compressi con zlib. i primi 2 bytes (di solito) sono non compre
 
 ho scaricato il pacchetto da wireshark, rimosso i primi due bytes (tramite comando dd) e decompresso (tramite zlib-flate -uncompress). ho automatizzato tutto cio tramite lo script uncompress.sh
 
+----------------------------
+
+compressed ID    decompressed ID    description
+0x0a             0x14               player rotation
+0x1a             0x12               player position
+?                0x00               players logs in
+0x19             0x0b               plugin message (serverbound)
+0x22             0x13               player position and rotation (serverbound)
+0x18             0x2e               BLOCK PLACEMENT (serverbound)
+0x12             0x03               CHAT MESSAGE (serverbound)
+0x0c             0x03               CHAT MESSAGE (serverbound)
 
 
