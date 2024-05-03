@@ -1,0 +1,12 @@
+
+int 0x80 // eax = 221, ebx = /bin/sh 
+
+0x0804860c: pop edx; ret;
+
+0x08048435: pop ebx; ret;
+
+0x08048606: pop eax; int 0x80; pop ebx; pop ecx; ret;
+
+
+
+0x08048606: pop eax; int 0x80; pop ebx; pop ecx; ret;

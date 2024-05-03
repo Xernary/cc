@@ -11,10 +11,10 @@ def main():
     '''
     HOST = "shell.challs.cyberchallenge.it"
     PORT = 9123
-    r = remote(HOST, PORT)
+    #r = remote(HOST, PORT)
     exe = ELF("./restricted_shell")
     context.binary = exe
-    #r = process(exe.path)
+    r = process(exe.path)
 
 
     # .send() può essere invocato sull'oggetto ritornato da remote() per inviare dati

