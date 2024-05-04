@@ -1,0 +1,11 @@
+ret addr is at 88 (+8 bytes canary ?) bytes offset from buffer
+
+need to leak the canary
+
+i can write up to 256 bytes to buffer
+
+i need to override the first byte of canary (which is 0) and then the printf will leak the entire overflowed buffer, so the canary too
+
+canary size = 16 bytes
+
+canary_addr = buff_addr + 88
