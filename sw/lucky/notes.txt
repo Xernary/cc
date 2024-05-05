@@ -1,0 +1,3 @@
+normal bof, to bypass PIE just override the first two bytes of return address (since its little endian i can do it)
+
+with gdb we can see the you_won address (disass you_won) which is 0x000055555540083a so just override \x3a\x08 (in rev order ofc)

@@ -1,0 +1,4 @@
+from ghidra we see that ret addr is at offset 24 from buff
+
+0x00000000004005a7: pop rdi; ret;
+0x0000000000400681: pop rsi; pop r15; ret;
