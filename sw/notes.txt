@@ -10,3 +10,7 @@ disass -> mostra il codice assembly
 pie -> visualizza l'offset del programma
 breakr <address> -> aggiungi breakpoint sommando offset (pie) ad address
 info address <symbol> -> ritorna l'indirizzo di memoria a cui si trova il symbol, che puo essere una funzione
+cyclic <size> -> genera una string random di size bytes
+cyclic -l <some-substring> -> cerca la substringa e restituisce l'indirizzo (vedere quale substringa c'è in eip) e usare il comando con quella per trovare l'offset tra buff e ret addr
+search -t string <string> -> cerca una stringa in tutto l'eseguibile (librerie comprese (libc))
+ctrl + c -> dopo aver raggiunto il break in pwntools
