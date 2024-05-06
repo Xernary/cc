@@ -1,4 +1,8 @@
 from ghidra we see that ret addr is at offset 24 from buff
+read function returns number of bytes read, and stores it in RAX register (the same that contains the id of the syscall when we do int 0x80): we can use this to write the value 0x3b (59) to execute the syscall execve
+
+START OF SETVBUF IN LIBC:
+0x00005555554812f0 <+0>:	push   r13
 
 0x00000000004005a7: pop rdi; ret;
 0x0000000000400681: pop rsi; pop r15; ret;
