@@ -1,9 +1,11 @@
-xdd - hexdump di un file
+---- useful commands ----
+xdd <file> -> hexdump di un file
 gcc -S -> compila in elf
 gcc -E -> preprocessore
 strings <executable_file> -> fa vedere tutte le stringhe presenti in un file
 pwndbg -> gdb ma meglio
 pwntools -> libreria python
+objdump -R <file> -> stampa le entry della tabella got di un elf (R for dynamic Relocation entries)
 
 ---- pwndbg ----
 disass -> mostra il codice assembly
