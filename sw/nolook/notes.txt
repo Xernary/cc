@@ -5,3 +5,5 @@ one_gadget libc-2.27.so
   0x10a38c execve("/bin/sh", rsp+0x70, environ)
 
 modify GOT table entry for read without leaks, by adding to it the offset between read (in libc) and one gadget (in libc)
+
+subtracting a negative number is the same of adding the inverted number + 1 because it overflows (you invert it by doing 11111111 - number)
