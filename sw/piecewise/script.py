@@ -2,6 +2,7 @@
 
 # Importa la libreria di pwntools
 from pwn import *
+from binascii import hexlify
 
 
 def main():
@@ -37,12 +38,12 @@ def main():
             print("NUMBER = " + str(number))
             if "little-endian" in data:
                 #little endian
-                result = number.to_bytes(bits, 'little') 
+                result = number.to_bytes(int(bits/8), 'little') 
             else:
                 #big endian
-                result = number.to_bytes(bits, 'big') 
-            print(result)
-            r.send(int.from_bytes(result, "big", signed=True))
+                result = number.to_bytes(int(bits/8), 'big') 
+            print(hexlify(result))
+            r.send(result)
         elif "empty line" in data:
             r.send(b'\n')
 

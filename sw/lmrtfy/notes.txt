@@ -1,0 +1,1 @@
+48f631            xor    rsi,rsi
